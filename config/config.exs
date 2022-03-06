@@ -17,6 +17,8 @@ config :points, PointsWeb.Endpoint,
   pubsub_server: Points.PubSub,
   live_view: [signing_salt: "6LLjl5UW"]
 
+config :ueberauth, Ueberauth, providers: [github: {Ueberauth.Strategy.Github, []}]
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
