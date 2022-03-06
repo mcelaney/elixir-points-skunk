@@ -8,7 +8,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['PT Sans', 'sans-serif'],
+      sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
       serif: ['PT Serif', 'serif'],
     },
     extend: {},

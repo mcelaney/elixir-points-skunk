@@ -5,7 +5,7 @@ defmodule PointsWeb.UserOauthController do
 
   plug Ueberauth
 
-  @rand_pass_length 32
+  @rand_pass_length 15
 
   def callback(%{assigns: %{ueberauth_auth: %{info: user_info}}} = conn, %{"provider" => "github"}) do
     user_params = %{email: user_info.email, password: random_password()}

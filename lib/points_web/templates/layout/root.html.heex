@@ -5,27 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <%= csrf_meta_tag() %>
-    <%= live_title_tag assigns[:page_title] || "Points", suffix: " · Phoenix Framework" %>
+    <%= live_title_tag assigns[:page_title] || "Points", suffix: " · Points" %>
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
   <body>
-    <header>
-      <section class="container">
-        <nav>
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
-          <%= render "_user_menu.html", assigns %>
-        </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
-        </a>
-      </section>
-    </header>
-    <%= @inner_content %>
+    <div class="flex flex-col h-screen">
+      <header class="py-5 px-5 bg-stone-900 text-white">
+        <h1 class="uppercase font-bold text-3xl inline"><%= gettext("Points App") %></h1>
+        <div class="float-right pt-1">
+          <%= if is_nil(@current_user) do %>
+            <%= link gettext("Sign in with Github"), to: Routes.user_oauth_path(@conn, :request, "github"), class: "h-8 px-4 py-2 text-sm text-pink-100 transition-colors duration-150 bg-pink-700 rounded-lg cursor-pointer focus:shadow-outline hover:bg-pink-800 hover:underline" %>
+          <% else %>
+            <%= link gettext("Sign out"), to: Routes.user_session_path(@conn, :delete), method: :delete, class: "h-8 px-4 py-2 text-sm text-pink-100 transition-colors duration-150 bg-pink-700 rounded-lg cursor-pointer focus:shadow-outline hover:bg-pink-800 hover:underline" %>
+          <% end %>
+        </div>
+      </header>
+      <main class="p-5 flex-1">
+        <%= @inner_content %>
+      </main>
+      <footer class="py-5 bg-stone-900 text-center text-white">
+        <div class="logo-container">
+          <h3 class="logo">
+            <a href="https://www.ombulabs.com" target="_blank" title="The Lean Software Boutique">
+              <span class="logo-ombu">Ombu</span>Labs
+            </a>
+          </h3>
+          <h2 class="slogan">
+            <a href="https://www.ombulabs.com" target="_blank" title="Ombu Labs"> THE LEAN SOFTWARE BOUTIQUE </a>
+          </h2>
+        </div>
+        <div>
+          <p><%= gettext("Made with ❤ around the world") %></p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
