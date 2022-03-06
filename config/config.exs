@@ -19,6 +19,17 @@ config :points, PointsWeb.Endpoint,
 
 config :ueberauth, Ueberauth, providers: [github: {Ueberauth.Strategy.Github, []}]
 
+config :tailwind,
+  version: "3.0.21",
+  default: [
+    args: ~w(
+      --config=tailwind.config.js
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../assets", __DIR__)
+  ]
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails

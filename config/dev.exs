@@ -25,7 +25,8 @@ config :points, PointsWeb.Endpoint,
   secret_key_base: "gOJfbdIdf10y3sVAfJRrbYtAX9cK6g2Hk6R7+A0lCi0HjY7FrTiIIbpPIbTjUwTn",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
