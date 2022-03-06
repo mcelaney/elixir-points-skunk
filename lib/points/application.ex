@@ -4,6 +4,7 @@ defmodule Points.Application do
   @moduledoc false
 
   use Application
+  alias PointsWeb.Endpoint
 
   @impl true
   def start(_type, _args) do
@@ -30,7 +31,7 @@ defmodule Points.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    PointsWeb.Endpoint.config_change(changed, removed)
+    Endpoint.config_change(changed, removed)
     :ok
   end
 end
