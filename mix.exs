@@ -33,7 +33,7 @@ defmodule Points.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:bcrypt_elixir, "~> 2.0"},
+      {:bcrypt_elixir, "~> 3.0"},
       {:phoenix, "~> 1.6.6"},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.6"},
@@ -54,7 +54,7 @@ defmodule Points.MixProject do
       {:ueberauth, "~> 0.6"},
       {:ueberauth_github, "~> 0.7"},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
-
+      {:earmark, "~> 1.4"},
     ]
   end
 

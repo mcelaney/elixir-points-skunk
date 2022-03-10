@@ -68,6 +68,14 @@ defmodule PointsWeb.Router do
 
   scope "/", PointsWeb do
     pipe_through [:browser, :require_authenticated_user]
+    live "/projects", ProjectsLive, :index
+    live "/projects/new", ProjectsLive, :new_project
+    live "/project/:project_id", ProjectLive, :show
+    live "/project/:project_id/edit", ProjectLive, :edit
+    live "/project/:project_id/new_story", ProjectLive, :new_story
+    live "/story/:story_id", ProjectLive, :edit_story
+    live "/sub_project/:sub_project_id", ProjectLive, :show, as: :sub_project
+    live "/sub_project/:sub_project_id/new_story", ProjectLive, :new_story, as: :sub_project
   end
 
   scope "/", PointsWeb do

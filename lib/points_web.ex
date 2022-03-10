@@ -47,7 +47,9 @@ defmodule PointsWeb do
       use Phoenix.LiveView,
         layout: {PointsWeb.LayoutView, "live.html"}
 
+      import PointsWeb.Gettext
       unquote(view_helpers())
+      import PointsWeb.SessionDefaults
     end
   end
 
@@ -56,6 +58,7 @@ defmodule PointsWeb do
       use Phoenix.LiveComponent
 
       unquote(view_helpers())
+      import PointsWeb.SessionDefaults
     end
   end
 
@@ -91,6 +94,7 @@ defmodule PointsWeb do
 
       # Import LiveView and .heex helpers (live_render, live_patch, <.form>, etc)
       import Phoenix.LiveView.Helpers
+      import PointsWeb.Components
 
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
