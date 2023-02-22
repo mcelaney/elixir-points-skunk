@@ -2,13 +2,13 @@
 
 [Points](https://github.com/fastruby/points) is a Ruby app by [FastRuby.io](https://www.fastruby.io/) -- this is not Points.  This is an Elixir Skunk rebuild of points.
 
-Fair warning - this is [Irresponsible Elixir](https://youtu.be/caYY6vdXEeo?list=PLE7tQUdRKcyb03P3xsIBPGoPycg03fEJ1&t=286) - no docs, unit tests, or commit history done for fun and learning on my part. **This is not functional** and I don't necessarily stand by any of the code I wrote here. Please check out [Points](https://github.com/fastruby/points) instead.
+Fair warning - this is [Irresponsible Elixir](https://youtu.be/caYY6vdXEeo?list=PLE7tQUdRKcyb03P3xsIBPGoPycg03fEJ1&t=286) - no docs, unit tests, or commit history done for fun and learning on my part. **This is not functional** and I don't necessarily stand by any of the code I wrote here. Please check out Fast Ruby's [Points](https://github.com/fastruby/points) or my Elixir rebuild [Pistes](https://github.com/mcelaney/pistes) instead. 
 
 ## Why did I do this? 
 
 After seeing the [LiveBeats](https://github.com/fly-apps/live_beats) example I wanted to take a Ruby/JS project I didn't know very well and see how far I could get through a rebuild in the PETAL stack in around a day. This is the result.
 
-I'd call the experiment successful in that I see this as my default approach for grefield apps going forward. The level of cohesion this brings to a project makes it a no-brainer.
+I'd call the experiment successful in that I see this as my default approach for greenfield apps going forward. The level of cohesion this brings to a project makes it a no-brainer.
 
 # Installing Anyway
 
